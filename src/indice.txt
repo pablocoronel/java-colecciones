@@ -4,3 +4,4 @@ Package default:
 
 179: Colecciones I => Teoría
 180: Colecciones II => Cuentas_Usuarios.java, Cliente.java
+181: Colecciones III. Métodos equals y hashCode I => Cuentas_Usuarios.java, Libro.java, Uso_Libro.java

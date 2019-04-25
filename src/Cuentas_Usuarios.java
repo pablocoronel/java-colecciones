@@ -11,6 +11,9 @@ public class Cuentas_Usuarios {
 		Cliente cliente_3 = new Cliente("lola", "00003", 20000);
 		Cliente cliente_4 = new Cliente("nati", "00004", 25000);
 
+		// repito un objecto
+		Cliente cliente_5 = new Cliente("nati", "00004", 25000);
+
 		// crear la coleccion
 		Set<Cliente> clientes_banco = new HashSet<Cliente>();
 
@@ -19,6 +22,11 @@ public class Cuentas_Usuarios {
 		clientes_banco.add(cliente_2);
 		clientes_banco.add(cliente_3);
 		clientes_banco.add(cliente_4);
+
+		// agrego el objecto reperito al hashSet (en teoria no admite repetidos)
+		// aparece repetido porque para clases propias (no predefinidas), es necesrio
+		// sobreescribir el metodo hashCode() y equals()
+		clientes_banco.add(cliente_5);
 
 		// recorrer la coleccion
 		for (Cliente un_cliente : clientes_banco) {

@@ -6,3 +6,4 @@ Package default:
 180: Colecciones II => Cuentas_Usuarios.java, Cliente.java
 181: Colecciones III. Métodos equals y hashCode I => Cuentas_Usuarios.java, Libro.java, Uso_Libro.java
 182: Colecciones IV. Métodos equals y hashCode II => Libro.java, Uso_Libro.java, Cuentas_Usuarios.java
+183: Colecciones V Iteradores => Cuentas_Usuarios.java

@@ -18,8 +18,10 @@ public class Prueba_LinkedList {
 		// iterador para LinkedList
 		ListIterator<String> it = personas.listIterator();
 
-		// agregar un elemento (se usa el iterador para indicar la posicion)
-		
+		// agregar un elemento (se usa el iterador)
+		it.next(); // avanza un elemento
+		it.add("NUEVO"); // se agrega 2do, xq next() avanzó una posicion
+
 		for (String persona : personas) {
 			System.out.println(persona);
 		}

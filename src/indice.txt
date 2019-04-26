@@ -7,3 +7,4 @@ Package default:
 181: Colecciones III. Métodos equals y hashCode I => Cuentas_Usuarios.java, Libro.java, Uso_Libro.java
 182: Colecciones IV. Métodos equals y hashCode II => Libro.java, Uso_Libro.java, Cuentas_Usuarios.java
 183: Colecciones V Iteradores => Cuentas_Usuarios.java
+184: Colecciones VI LinkedList I => Prueba_LinkedList.java

@@ -36,33 +36,84 @@ public class Prueba_TreeSet {
 		/*********************************************************/
 		// con Comparator
 		// version de Articulo con comparator
-		Articulo comparador_articulos = new Articulo();
+		// Articulo comparador_articulos = new Articulo();
 
 		// TreeSet que recibe un Comparator
 		// el TreeSet busca directamente el metodo compare()
-		TreeSet<Articulo> ordena_articulos_2 = new TreeSet<Articulo>(comparador_articulos);
+		// TreeSet<Articulo> ordena_articulos_2 = new
+		// TreeSet<Articulo>(comparador_articulos);
 
-		ordena_articulos_2.add(primero);
-		ordena_articulos_2.add(segundo);
-		ordena_articulos_2.add(tercero);
-		ordena_articulos_2.add(cuarto);
+//		ordena_articulos_2.add(primero);
+//		ordena_articulos_2.add(segundo);
+//		ordena_articulos_2.add(tercero);
+//		ordena_articulos_2.add(cuarto);
+//
+//		// ver
+//		System.out.println();
+//		for (Articulo art : ordena_articulos_2) {
+//			System.out.println(art.getDescripcion());
+//		}
+
+		/********************************************************************/
+		// comparar sin implementar interfaces en la clase
+		/*********************************************************************/
+
+		// comparador
+		Comparador_Articulos compara_art = new Comparador_Articulos();
+
+		// coleccion
+		TreeSet<Articulo> ordena_articulos_3 = new TreeSet<>(compara_art);
+
+		ordena_articulos_3.add(primero);
+		ordena_articulos_3.add(segundo);
+		ordena_articulos_3.add(tercero);
+		ordena_articulos_3.add(cuarto);
 
 		// ver
-		System.out.println();
-		for (Articulo art : ordena_articulos_2) {
+		System.out.println("3");
+		for (Articulo art : ordena_articulos_3) {
+			System.out.println(art.getDescripcion());
+		}
+
+		/****************************************************/
+		// comparar con clase interna
+		/*******************************************************/
+		TreeSet<Articulo> ordena_articulos_4 = new TreeSet<>(new Comparator<Articulo>() {
+
+			@Override
+			public int compare(Articulo o1, Articulo o2) {
+				// TODO Auto-generated method stub
+				String descripcionA = o1.getDescripcion();
+				String descripcionB = o2.getDescripcion();
+
+				return descripcionA.compareTo(descripcionB);
+			}
+
+		});
+
+		ordena_articulos_4.add(primero);
+		ordena_articulos_4.add(segundo);
+		ordena_articulos_4.add(tercero);
+		ordena_articulos_4.add(cuarto);
+
+		// ver
+		System.out.println("4");
+		for (Articulo art : ordena_articulos_4) {
 			System.out.println(art.getDescripcion());
 		}
 	}
 
 }
 
-class Articulo implements Comparable<Articulo>, Comparator<Articulo> {
+// para Comparable y Comparator
+//class Articulo implements Comparable<Articulo>, Comparator<Articulo> {
+class Articulo implements Comparable<Articulo> {
 	private int numero;
 	private String descripcion;
 
-	public Articulo() {
-
-	}
+//	public Articulo() {
+//
+//	}
 
 	public Articulo(int numero, String descripcion) {
 		// TODO Auto-generated constructor stub
@@ -88,13 +139,26 @@ class Articulo implements Comparable<Articulo>, Comparator<Articulo> {
 		return this.descripcion;
 	}
 
-	@Override
-	public int compare(Articulo arg0, Articulo arg1) {
-		// TODO Auto-generated method stub
+//	@Override
+//	public int compare(Articulo arg0, Articulo arg1) {
+//		// TODO Auto-generated method stub
+//
+//		String descripcionA = arg0.getDescripcion();
+//		String descripcionB = arg1.getDescripcion();
+//
+//		return descripcionA.compareTo(descripcionB);
+//	}
+}
 
-		String descripcionA = arg0.getDescripcion();
-		String descripcionB = arg1.getDescripcion();
+class Comparador_Articulos implements Comparator<Articulo> {
+
+	@Override
+	public int compare(Articulo o1, Articulo o2) {
+		// TODO Auto-generated method stub
+		String descripcionA = o1.getDescripcion();
+		String descripcionB = o2.getDescripcion();
 
 		return descripcionA.compareTo(descripcionB);
 	}
+
 }
